@@ -27,6 +27,18 @@ jobs:
       run: npm install
     - name: Run integration tests
       run: npm test
+
+  security-test:
+  
+    runs-on: ubuntu-latest
     
+    needs: build-and-test
+  
+    steps: 
+      - name: Audit fix 
+        run: npm audit fix
+      - name: Force fix 
+        run: npm audit fix --force
+      
  
       
