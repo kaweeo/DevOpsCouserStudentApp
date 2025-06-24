@@ -43,8 +43,8 @@ jobs:
         needs: security-test
         steps:
             - name: Deploy to production
-              uses: johnbeynon/render-deploy-action@v0.0.8
+              uses: JorgeLNJunior/render-deploy-action@v1.4.5
               with:
                   service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
                   api-key: ${{ secrets.MY_RENDER_API_KEY }}
-                  wait-for-success: true
+                  wait_deploy: true
